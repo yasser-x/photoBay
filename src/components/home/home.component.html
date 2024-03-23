@@ -1,0 +1,21 @@
+<p class="title">Pixabay Image Search</p> <hr>
+
+
+<div role="search" class="d-flex search">
+  <input class="form-control" type="text" [(ngModel)]="searchQuery" placeholder="Search for images">
+  <button class="btn btn-outline-success" (click)="searchImages()">Find images</button>
+</div>
+
+<div *ngIf="images.length > 0">
+  <div *ngFor="let image of images" class="card" style="width: 18rem; display: inline-block;">
+    <img [src]="image.webformatURL" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Tags:</h5>
+      <ul>
+        <li *ngFor="let tag of image.tags.split(',')" class="list-group-item">{{ tag }}</li>
+      </ul>
+      <p class="card-text">Likes: {{ image.likes }}</p>
+      <p class="card-text">Comments: {{ image.comments }}</p>
+    </div>
+  </div>
+</div>

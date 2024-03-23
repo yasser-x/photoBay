@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="image.imageUrl" class="card-img-top" alt="...">
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let tag of image.tags">{{ tag }}</li>
+    <li class="list-group-item">{{ image.likes }}</li>
+    <li class="list-group-item">{{ image.comments }}</li>
+  </ul>
+
+</div>
